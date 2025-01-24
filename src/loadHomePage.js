@@ -28,4 +28,21 @@ export function loadHomepage() {
 
     appendChildren(contentDiv, [imgSq1, imgSq2, imgHor, imgVer]);
 
+    // hero
+    const hero = document.createElement("div");
+    hero.setAttribute("id", "hero-text");
+    contentDiv.appendChild(hero);
+
+    // logo
+    const logo = document.createElement("p");
+    logo.innerText = "خن چن"; 
+    logo.setAttribute("id", "logo");
+    hero.appendChild(logo);
+
+    // hero text
+    const heroTxt = document.createElement("p");
+    heroTxt.innerText = "Flavors to savor.\nMoments to cherish.";
+    heroTxt.setAttribute("id", "tagline");
+    hero.appendChild(heroTxt);
+
 }
