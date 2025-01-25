@@ -1,4 +1,4 @@
-# Dynamic Restaurant Website
+# Restaurant Page
 
 ## Project Overview
 
