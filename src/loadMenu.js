@@ -1,3 +1,7 @@
+import { appendChildren, makeCards, menuItems } from "./utils.js";
+
+
+
 export function loadMenu() {
 
     const contentDiv = document.querySelector("div#content");
@@ -6,22 +10,15 @@ export function loadMenu() {
     contentDiv.classList.remove("home");
     contentDiv.classList.remove("about");
 
-    const header = document.createElement('h1');
-    header.innerText = "What we offer";
-    contentDiv.appendChild(header);
+   const heading = document.createElement("div");
+   heading.classList.add("heading");
+   heading.innerText = "Our offerings";
 
-    const menu = document.createElement("ul");
-    contentDiv.appendChild(menu);
+   const menu = document.createElement("div");
+   menu.classList.add("menu-container");
 
-    const nunChai = document.createElement("li");
-    nunChai.innerText = "Nun Chai"
-    menu.appendChild(nunChai);
+   appendChildren(contentDiv, [heading, menu]);
 
-    const roganJosh = document.createElement("li");
-    roganJosh.innerText = "Rogan Josh"
-    menu.appendChild(roganJosh);
+   appendChildren(menu, makeCards(menuItems));
 
-    const seekhTujje = document.createElement("li");
-    seekhTujje.innerText = "Seekh Tujje"
-    menu.appendChild(seekhTujje);
 };

@@ -1,3 +1,5 @@
+import { appendChildren } from "./utils";
+
 export function loadAbout() {
 
     const contentDiv = document.querySelector('div#content');
@@ -6,16 +8,25 @@ export function loadAbout() {
     contentDiv.classList.remove("menu");
     contentDiv.classList.remove("home");
 
-    const header = document.createElement('h1');
-    header.innerText = "Reach out to us!";
+    const heading = document.createElement('div');
+    heading.classList.add("heading");
+    heading.innerText = "Reach out to us!";
 
-    const email = document.createElement('p');
-    email.innerText = "Email us at contact@shoadepend.com";
+    const container = document.createElement('div');
+    container.classList.add("container");
 
-    const number = document.createElement('p');
-    number.innerText = "Give us a call at 6922745801";
+    const address = document.createElement('div');
+    address.classList.add("address");
+    address.innerText = "101 Bliss Resort, Paradise";
 
-    contentDiv.appendChild(header);
-    contentDiv.appendChild(email);
-    contentDiv.appendChild(number);
+    const email = document.createElement('div');
+    email.classList.add("email");
+    email.innerText = "khenchen@paradise";
+
+    const number = document.createElement('div');
+    number.classList.add("number");
+    number.innerText = "111-000-1111";
+
+    appendChildren(container, [address, email, number]);
+    appendChildren(contentDiv, [heading, container]);
 }
