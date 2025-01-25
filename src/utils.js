@@ -1,5 +1,15 @@
 import kehwaImg from "./images/whisk-affair-kehwa.jpeg";
 
+export function navToggle(tab) {
+    const navBtns = document.querySelectorAll("nav > button");
+
+    navBtns.forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    tab.classList.add("active");
+}
+
 export function appendChildren(node, children) {
     // takes a DOM node (parent) and a list of desired children
     // appends the children to the parent node
